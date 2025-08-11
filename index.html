@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Anand Shukla - Portfolio & Contact</title>
+  <meta name="description" content="Portfolio of Anand Shukla - Digital Marketer, Web Developer & Programmer. Explore projects and contact Anand directly." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: linear-gradient(270deg, #89f7fe, #66a6ff, #89f7fe, #66a6ff);
+      background-size: 800% 800%;
+      animation: gradientBG 20s ease infinite;
+      color: #333;
+      scroll-behavior: smooth;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.5;
+    }
+    header {
+      text-align: center;
+      padding: 20px 15px 30px;
+      background: rgba(255, 255, 255, 0.95);
+      border-bottom: 4px solid #66a6ff;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    header img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 4px solid #66a6ff;
+      box-shadow: 0 0 20px rgba(102, 166, 255, 0.7);
+      object-fit: cover;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+    header img:hover {
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: 0 0 30px rgba(102, 166, 255, 1);
+    }
+    header h1 {
+      margin: 0 0 4px;
+      font-size: 1.8rem;
+      letter-spacing: 2.5px;
+      font-weight: 700;
+      color: #0b3d91;
+      text-shadow: 0 2px 8px rgba(102, 166, 255, 0.8);
+    }
+    header p {
+      font-size: 0.95rem;
+      color: #444;
+      margin: 3px 0;
+      font-weight: 600;
+    }
+    header p:last-child {
+      letter-spacing: 1.5px;
+      font-weight: 500;
+      color: #2a2a2a;
+    }
+
+    /* Offer Banner */
+    .offer-banner {
+      background: linear-gradient(90deg, #ffd700, #ff8c00);
+      padding: 15px 15px;
+      margin: 0 auto 35px;
+      max-width: 1000px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(255, 140, 0, 0.6);
+      text-align: center;
+      cursor: default;
+      transition: background 0.4s ease;
+    }
+    .offer-banner:hover {
+      background: linear-gradient(90deg, #ff8c00, #ffd700);
+      box-shadow: 0 8px 30px rgba(255, 165, 0, 0.8);
+    }
+    .offer-banner .offer-content p {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 1px;
+      margin: 0;
+      user-select: none;
+    }
+    .offer-banner .offer-content p span {
+      background: #fff;
+      color: #ff8c00;
+      padding: 4px 14px;
+      border-radius: 25px;
+      margin: 0 8px;
+      box-shadow: 0 0 10px #fff;
+      transition: box-shadow 0.3s ease;
+      display: inline-block;
+      min-width: 50px;
+    }
+    .offer-banner .offer-content p span:hover {
+      box-shadow: 0 0 18px #ff8c00;
+    }
+
+    section {
+      padding: 50px 15px 60px;
+      max-width: 1000px;
+      margin: auto;
+      flex-grow: 1;
+    }
+    h2 {
+      text-align: center;
+      color: #0b3d91;
+      margin-bottom: 40px;
+      font-size: 2.6rem;
+      position: relative;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+    h2::after {
+      content: "";
+      position: absolute;
+      width: 90px;
+      height: 5px;
+      background: #66a6ff;
+      bottom: -16px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 3px;
+      box-shadow: 0 0 10px #66a6ff;
+    }
+
+    /* Projects grid */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 26px;
+      margin-bottom: 70px;
+    }
+    .project {
+      background: #fff;
+      padding: 26px 28px 34px;
+      border-radius: 18px;
+      box-shadow: 0 7px 22px rgba(0,0,0,0.1);
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s ease;
+      cursor: default;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .project:hover {
+      transform: translateY(-8px) scale(1.04);
+      box-shadow: 0 13px 30px rgba(0,0,0,0.15);
+    }
+    .project h3 {
+      margin: 0 0 12px;
+      color: #0b3d91;
+      font-weight: 700;
+      font-size: 1.6rem;
+      letter-spacing: 0.7px;
+    }
+    .project p {
+      font-size: 1rem;
+      color: #555;
+      min-height: 65px;
+      line-height: 1.5;
+      margin-bottom: 18px;
+      flex-grow: 1;
+    }
+    .project a {
+      align-self: flex-start;
+      padding: 11px 22px;
+      background: #66a6ff;
+      color: white;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 1.05rem;
+      text-decoration: none;
+      box-shadow: 0 5px 15px rgba(102, 166, 255, 0.5);
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+    .project a:hover,
+    .project a:focus {
+      background: #4a7ad9;
+      box-shadow: 0 7px 20px rgba(74, 122, 217, 0.7);
+      outline: none;
+    }
+
+    /* Contact form styles */
+    .contact-form {
+      background: #fff;
+      padding: 38px 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+      max-width: 480px;
+      margin: 0 auto 80px;
+      transition: box-shadow 0.3s ease;
+    }
+    .contact-form:hover {
+      box-shadow: 0 14px 60px rgba(0,0,0,0.15);
+    }
+    .contact-form h2 {
+      margin-bottom: 28px;
+      color: #0b3d91;
+      font-size: 2.2rem;
+      font-weight: 700;
+      text-align: center;
+      letter-spacing: 1.5px;
+    }
+    .contact-form label {
+      display: block;
+      margin-top: 20px;
+      font-weight: 600;
+      color: #444;
+      font-size: 1.05rem;
+      letter-spacing: 0.2px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 14px 16px;
+      margin-top: 6px;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-family: 'Poppins', sans-serif;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      resize: vertical;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #66a6ff;
+      box-shadow: 0 0 8px #66a6ffaa;
+      outline: none;
+    }
+    .contact-form textarea {
+      min-height: 120px;
+      font-size: 1.05rem;
+    }
+    .contact-form button {
+      margin-top: 32px;
+      background: linear-gradient(135deg, #66a6ff, #5479d9);
+      color: white;
+      border: none;
+      padding: 15px 0;
+      font-size: 1.22rem;
+      font-weight: 700;
+      border-radius: 50px;
+      cursor: pointer;
+      width: 100%;
+      box-shadow: 0 8px 20px rgba(102, 166, 255, 0.7);
+      transition: background 0.4s ease, box-shadow 0.4s ease;
+      user-select: none;
+      touch-action: manipulation;
+    }
+    .contact-form button:hover,
+    .contact-form button:focus {
+      background: linear-gradient(135deg, #5479d9, #4061a6);
+      box-shadow: 0 10px 25px rgba(64, 97, 166, 0.9);
+      outline: none;
+    }
+    .contact-form button:disabled {
+      background: #a0bdfd;
+      box-shadow: none;
+      cursor: not-allowed;
+    }
+
+    footer {
+      text-align: center;
+      padding: 28px 15px;
+      background: rgba(255, 255, 255, 0.95);
+      font-size: 1rem;
+      color: #555;
+      border-top: 4px solid #66a6ff;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+      user-select: none;
+    }
+    footer .social-icons {
+      margin-bottom: 12px;
+    }
+    footer .social-icons a {
+      color: #66a6ff;
+      margin: 0 14px;
+      font-size: 1.6rem;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    footer .social-icons a:hover,
+    footer .social-icons a:focus {
+      color: #5479d9;
+      outline: none;
+    }
+
+    /* Responsive styles */
+
+    @media (max-width: 1024px) {
+      header img {
+        width: 90px;
+        height: 90px;
+      }
+      header h1 {
+        font-size: 2.3rem;
+      }
+      section {
+        padding: 45px 20px 55px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      header img {
+        width: 80px;
+        height: 80px;
+      }
+      header h1 {
+        font-size: 2rem;
+      }
+      .offer-banner .offer-content p {
+        font-size: 1.25rem;
+      }
+      section {
+        padding: 40px 18px 50px;
+      }
+      .projects {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 20px;
+      }
+      .contact-form {
+        max-width: 90%;
+        padding: 35px 25px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header img {
+        width: 70px;
+        height: 70px;
+      }
+      header h1 {
+        font-size: 1.7rem;
+      }
+      header p {
+        font-size: 0.9rem;
+      }
+      .offer-banner {
+        padding: 14px 15px;
+        margin-bottom: 30px;
+      }
+      .offer-banner .offer-content p {
+        font-size: 1.15rem;
+      }
+      section {
+        padding: 35px 12px 45px;
+      }
+      .projects {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+      .project h3 {
+        font-size: 1.4rem;
+      }
+      .project p {
+        font-size: 0.95rem;
+        min-height: 60px;
+      }
+      .project a {
+        padding: 10px 20px;
+        font-size: 1rem;
+      }
+      .contact-form {
+        padding: 28px 18px;
+        max-width: 100%;
+        margin-bottom: 60px;
+      }
+      .contact-form h2 {
+        font-size: 1.9rem;
+      }
+      .contact-form label {
+        font-size: 1rem;
+        margin-top: 18px;
+      }
+      .contact-form input,
+      .contact-form textarea {
+        font-size: 0.95rem;
+        padding: 12px 14px;
+      }
+      .contact-form button {
+        font-size: 1.15rem;
+        padding: 14px 0;
+      }
+      footer {
+        font-size: 0.9rem;
+        padding: 25px 10px;
+      }
+      footer .social-icons a {
+        font-size: 1.4rem;
+        margin: 0 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logo.jpg" alt="Logo of Rudra Digital Marketing by Anand Shukla" loading="lazy" />
+    <h1>RUDRA DIGITAL MARKETING</h1>
+    <p>Web Developer | Digital Marketer | Programmer</p>
+    <p>MOB - 8467063125, 9161174816</p>
+  </header>
+
+  <!-- Offer Banner -->
+  <section class="offer-banner" aria-label="Special offer">
+    <div class="offer-content">
+      <p><strong>SPECIAL OFFER:</strong> Full service at <span>₹499</span> only! <span>₹20</span> for demo.</p>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>My Projects</h2>
+    <div class="projects">
+      <div class="project" tabindex="0">
+        <h3>AI Resume & Cover Letter Generator</h3>
+        <p>A smart tool to create professional resumes & cover letters instantly.</p>
+        <a href="https://anandshukla2212.github.io/AI-Resume-Cover-Letter-Generator-BY-ANAND-SHUKLA/" target="_blank" rel="noopener noreferrer" aria-label="View AI Resume and Cover Letter Generator project">View Project</a>
+      </div>
+      
+      <div class="project" tabindex="0">
+        <h3>Phone UI Web App</h3>
+        <p>A creative phone-like web interface with interactive app icons.</p>
+        <a href="https://anandshukla2212.github.io/html-task-RDMCOI/" target="_blank" rel="noopener noreferrer" aria-label="View Phone UI Web App project">View Project</a>
+      </div>
+
+      <div class="project" tabindex="0">
+        <h3>DEMO WEBSITE</h3>
+        <p>A creative SHOP PRESENTATION.</p>
+        <a href="DEMO.HTML" target="_blank" rel="noopener noreferrer" aria-label="View Demo Website project">View Project</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-form" aria-label="Contact form">
+    <h2>Contact Me</h2>
+    <form id="customForm">
+      <label for="name">Name*</label>
+      <input type="text" id="name" name="name" placeholder="Your full name" required />
+      
+      <label for="email">Email*</label>
+      <input type="email" id="email" name="email" placeholder="your.email@example.com" required />
+      
+      <label for="phone">Phone</label>
+      <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" />
+      
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Your message or requirements"></textarea>
+      
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 Anand Shukla. All rights reserved.
+  </footer>
+
+  <script>
+    const form = document.getElementById('customForm');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Thank you! The contact form will open in a new tab for you to submit your message.');
+     window.open('https://docs.google.com/forms/d/e/1FAIpQLSd0PTzqp8QOfpBFEl2xd42RVSkIQzrrr0Eo_2lw1dmadxLd2w/viewform?usp=sf_link', '_blank');
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>
