@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: http://rudradigitalmarketing2212.github.io/Rudra-/sitemap.xml
